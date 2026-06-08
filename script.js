@@ -6,14 +6,6 @@ const proposal = document.getElementById("proposal");
 const accepted = document.getElementById("accepted");
 const noHint = document.getElementById("noHint");
 
-const teasingMessages = [
-  "Tombol Tidak lagi malu-malu.",
-  "Eh, dia kabur. Pilih Iya aja ya.",
-  "Tidaknya susah ditangkap nih.",
-  "Kayaknya hatinya tetap condong ke Iya.",
-  "Aisyah cantik, tombol ini memang anti ditolak."
-];
-
 let noMoves = 0;
 let toastTimer;
 
