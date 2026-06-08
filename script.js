@@ -43,12 +43,12 @@ function floatNoButton() {
 }
 
 function moveNoButton(event) {
-  event?.preventDefault();
-  event?.stopPropagation();
-
-  if (noBtn.hidden || !accepted.hidden) {
+  if (noBtn.hidden || noBtn.disabled || proposal.hidden || !accepted.hidden) {
     return;
   }
+
+  event?.preventDefault();
+  event?.stopPropagation();
 
   floatNoButton();
 
@@ -101,18 +101,22 @@ function resetNoButton() {
   noBtn.hidden = false;
   noBtn.disabled = false;
   noBtn.removeAttribute("aria-hidden");
+  noBtn.classList.remove("is-gone");
   noBtn.classList.remove("is-floating");
   noBtn.removeAttribute("style");
   actions.appendChild(noBtn);
 }
 
 function acceptInvitation() {
-  resetNoButton();
   proposal.hidden = true;
   accepted.hidden = false;
+  noBtn.classList.add("is-gone");
   noBtn.hidden = true;
   noBtn.disabled = true;
   noBtn.setAttribute("aria-hidden", "true");
+  noBtn.classList.remove("is-floating");
+  noBtn.removeAttribute("style");
+  actions.appendChild(noBtn);
   noHint.classList.remove("show");
 
   for (let i = 0; i < 28; i += 1) {
@@ -137,7 +141,11 @@ yesBtn.addEventListener("click", acceptInvitation);
 backBtn.addEventListener("click", returnToProposal);
 
 window.addEventListener("resize", () => {
-  if (noBtn.classList.contains("is-floating") && !noBtn.hidden) {
+  if (
+    noBtn.classList.contains("is-floating") &&
+    !noBtn.hidden &&
+    !proposal.hidden
+  ) {
     moveNoButton();
   }
 });
