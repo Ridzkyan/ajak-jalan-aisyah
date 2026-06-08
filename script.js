@@ -39,6 +39,7 @@ function floatNoButton() {
   noBtn.style.width = `${rect.width}px`;
   noBtn.style.height = `${rect.height}px`;
   noBtn.classList.add("is-floating");
+  actions.classList.add("no-floating");
   document.body.appendChild(noBtn);
 }
 
@@ -103,6 +104,7 @@ function resetNoButton() {
   noBtn.removeAttribute("aria-hidden");
   noBtn.classList.remove("is-gone");
   noBtn.classList.remove("is-floating");
+  actions.classList.remove("no-floating");
   noBtn.removeAttribute("style");
   actions.appendChild(noBtn);
 }
@@ -115,6 +117,7 @@ function acceptInvitation() {
   noBtn.disabled = true;
   noBtn.setAttribute("aria-hidden", "true");
   noBtn.classList.remove("is-floating");
+  actions.classList.remove("no-floating");
   noBtn.removeAttribute("style");
   actions.appendChild(noBtn);
   noHint.classList.remove("show");
