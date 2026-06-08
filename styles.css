@@ -504,12 +504,12 @@ h2 {
   }
 
   .page-shell {
-    padding: 8px;
+    padding: 28px 14px;
   }
 
   .invite-card {
-    height: calc(100svh - 16px);
-    padding: 10px;
+    height: min(560px, calc(100svh - 56px));
+    padding: 12px;
   }
 
   .sticker-row {
@@ -590,7 +590,6 @@ h2 {
   .back-btn {
     margin-top: 10px;
   }
-
 }
 
 @media (max-width: 350px) {
