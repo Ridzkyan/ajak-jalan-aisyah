@@ -61,7 +61,7 @@ textarea {
 .invite-card {
   position: relative;
   width: min(100%, 520px);
-  max-height: calc(100svh - 44px);
+  height: min(620px, calc(100svh - 44px));
   overflow: hidden;
   border: 2px solid rgba(255, 127, 166, 0.35);
   border-radius: 8px;
@@ -69,6 +69,15 @@ textarea {
   box-shadow: var(--shadow);
   padding: 28px;
   text-align: center;
+}
+
+.proposal,
+.accepted {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sticker-row {
@@ -372,34 +381,6 @@ h2 {
   box-shadow: 0 16px 34px rgba(255, 79, 139, 0.22);
 }
 
-.no-hint {
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  z-index: 30;
-  width: min(calc(100vw - 32px), 360px);
-  padding: 12px 16px;
-  border: 2px solid rgba(255, 127, 166, 0.45);
-  border-radius: 8px;
-  color: var(--ink);
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 14px 38px rgba(63, 51, 66, 0.16);
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 12px);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
-}
-
-.no-hint.show {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
 .floaters {
   position: fixed;
   inset: 0;
@@ -527,7 +508,7 @@ h2 {
   }
 
   .invite-card {
-    max-height: calc(100svh - 16px);
+    height: calc(100svh - 16px);
     padding: 10px;
   }
 

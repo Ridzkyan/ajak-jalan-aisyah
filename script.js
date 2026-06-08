@@ -4,22 +4,10 @@ const backBtn = document.getElementById("backBtn");
 const actions = document.getElementById("actions");
 const proposal = document.getElementById("proposal");
 const accepted = document.getElementById("accepted");
-const noHint = document.getElementById("noHint");
 
-let noMoves = 0;
-let toastTimer;
 
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
-}
-
-function showNoHint() {
-  window.clearTimeout(toastTimer);
-  noHint.textContent = teasingMessages[noMoves % teasingMessages.length];
-  noHint.classList.add("show");
-  toastTimer = window.setTimeout(() => {
-    noHint.classList.remove("show");
-  }, 1200);
 }
 
 function floatNoButton() {
@@ -72,9 +60,6 @@ function moveNoButton(event) {
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
   noBtn.style.transform = `rotate(${randomBetween(-9, 9).toFixed(1)}deg)`;
-
-  showNoHint();
-  noMoves += 1;
 }
 
 function makeHeartPop() {
@@ -112,7 +97,6 @@ function acceptInvitation() {
   actions.classList.remove("no-floating");
   noBtn.removeAttribute("style");
   actions.appendChild(noBtn);
-  noHint.classList.remove("show");
 
   for (let i = 0; i < 28; i += 1) {
     window.setTimeout(makeHeartPop, i * 42);
@@ -122,7 +106,6 @@ function acceptInvitation() {
 function returnToProposal() {
   accepted.hidden = true;
   proposal.hidden = false;
-  noHint.classList.remove("show");
   resetNoButton();
 }
 
