@@ -508,8 +508,10 @@ h2 {
   }
 
   .invite-card {
-    height: min(560px, calc(100svh - 56px));
-    padding: 12px;
+    width: min(calc(100vw - 28px), calc(100svh - 96px), 380px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
   }
 
   .sticker-row {
@@ -527,9 +529,9 @@ h2 {
   }
 
   .mini-note {
-    min-height: 30px;
-    padding: 4px 6px;
-    font-size: 0.72rem;
+    min-height: 26px;
+    padding: 3px 6px;
+    font-size: 0.68rem;
   }
 
   .eyebrow {
@@ -538,27 +540,27 @@ h2 {
   }
 
   h1 {
-    font-size: 1.22rem;
+    font-size: 1.04rem;
   }
 
   h2 {
-    font-size: 1.34rem;
+    font-size: 1.22rem;
   }
 
   .love-line {
-    margin-top: 6px;
-    font-size: 0.82rem;
-    line-height: 1.35;
+    margin-top: 5px;
+    font-size: 0.76rem;
+    line-height: 1.28;
   }
 
   .cat-stage {
-    min-height: 176px;
-    margin: 12px auto 8px;
+    min-height: 128px;
+    margin: 7px auto 5px;
   }
 
   .main-gif {
-    width: 168px;
-    height: 168px;
+    width: 122px;
+    height: 122px;
   }
 
   .chibi-cat {
@@ -571,7 +573,7 @@ h2 {
   .actions {
     gap: 8px;
     min-height: 42px;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .btn {
@@ -583,8 +585,8 @@ h2 {
   }
 
   .accepted-gif {
-    width: 174px;
-    height: 174px;
+    width: 132px;
+    height: 132px;
   }
 
   .back-btn {
@@ -594,7 +596,31 @@ h2 {
 
 @media (max-width: 350px) {
   :root {
+    --button-height: 38px;
     --button-width: 96px;
+  }
+
+  .invite-card {
+    width: min(calc(100vw - 20px), calc(100svh - 80px), 310px);
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 0.96rem;
+  }
+
+  .love-line {
+    font-size: 0.72rem;
+  }
+
+  .cat-stage {
+    min-height: 112px;
+    margin: 4px auto;
+  }
+
+  .main-gif {
+    width: 106px;
+    height: 106px;
   }
 
   .actions {
@@ -604,6 +630,11 @@ h2 {
 
   .btn {
     width: 96px;
+  }
+
+  .accepted-gif {
+    width: 118px;
+    height: 118px;
   }
 }
 
