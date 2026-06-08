@@ -47,7 +47,7 @@ textarea {
 
 .page-shell {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: grid;
   height: 100svh;
   min-height: 100svh;
@@ -75,6 +75,10 @@ textarea {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 14px;
+}
+
+.solo-note {
+  margin: 0 auto 10px;
 }
 
 .cat-sticker {
@@ -141,10 +145,10 @@ h2 {
 
 .sticker-cloud {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 8px;
-  margin: 16px auto 6px;
-  max-width: 390px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px auto 6px;
+  max-width: 430px;
 }
 
 .tiny-sticker {
@@ -168,21 +172,21 @@ h2 {
 
 .accepted-stickers {
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  max-width: 310px;
-  margin-top: 16px;
+  max-width: 430px;
+  margin-top: 14px;
 }
 
 .cat-stage {
   position: relative;
   display: grid;
-  min-height: 190px;
+  min-height: 178px;
   place-items: center;
-  margin: 18px auto 10px;
+  margin: 14px auto 8px;
 }
 
 .main-gif {
-  width: min(56vw, 188px);
-  height: min(56vw, 188px);
+  width: min(50vw, 178px);
+  height: min(50vw, 178px);
   border: 3px solid rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   object-fit: cover;
@@ -437,81 +441,6 @@ h2 {
   animation: float-up 9s linear infinite;
 }
 
-.page-stickers {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.page-sticker {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  object-fit: cover;
-  background: #fff;
-  box-shadow: 0 10px 26px rgba(63, 51, 66, 0.14);
-  animation: sticker-drift 4.5s ease-in-out infinite;
-}
-
-.page-sticker:nth-child(1) {
-  left: 5%;
-  top: 11%;
-  transform: rotate(-8deg);
-}
-
-.page-sticker:nth-child(2) {
-  right: 7%;
-  top: 9%;
-  transform: rotate(7deg);
-  animation-delay: 0.5s;
-}
-
-.page-sticker:nth-child(3) {
-  left: 11%;
-  bottom: 13%;
-  transform: rotate(8deg);
-  animation-delay: 1s;
-}
-
-.page-sticker:nth-child(4) {
-  right: 10%;
-  bottom: 14%;
-  transform: rotate(-7deg);
-  animation-delay: 1.5s;
-}
-
-.page-sticker:nth-child(5) {
-  left: 21%;
-  top: 4%;
-  transform: rotate(5deg);
-  animation-delay: 0.9s;
-}
-
-.page-sticker:nth-child(6) {
-  right: 20%;
-  bottom: 5%;
-  transform: rotate(-5deg);
-  animation-delay: 1.8s;
-}
-
-.page-sticker:nth-child(7) {
-  left: 4%;
-  top: 52%;
-  transform: rotate(4deg);
-  animation-delay: 2.2s;
-}
-
-.page-sticker:nth-child(8) {
-  right: 4%;
-  top: 50%;
-  transform: rotate(-4deg);
-  animation-delay: 2.6s;
-}
-
 .floaters span:nth-child(1) {
   left: 8%;
   animation-delay: 0s;
@@ -607,17 +536,6 @@ h2 {
   }
 }
 
-@keyframes sticker-drift {
-  0%,
-  100% {
-    margin-top: 0;
-  }
-
-  50% {
-    margin-top: -8px;
-  }
-}
-
 @keyframes pop-heart {
   0% {
     opacity: 0;
@@ -646,6 +564,10 @@ h2 {
 
   .sticker-row {
     gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .solo-note {
     margin-bottom: 6px;
   }
 
@@ -680,10 +602,10 @@ h2 {
   }
 
   .sticker-cloud {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 4px;
-    max-width: 280px;
-    margin: 7px auto 3px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    max-width: 288px;
+    margin: 8px auto 4px;
   }
 
   .tiny-sticker {
@@ -692,19 +614,19 @@ h2 {
   }
 
   .accepted-stickers {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    max-width: 220px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 288px;
     margin-top: 8px;
   }
 
   .cat-stage {
-    min-height: 116px;
-    margin: 5px auto 2px;
+    min-height: 122px;
+    margin: 5px auto 3px;
   }
 
   .main-gif {
-    width: 108px;
-    height: 108px;
+    width: 118px;
+    height: 118px;
   }
 
   .chibi-cat {
@@ -739,15 +661,6 @@ h2 {
     margin-top: 10px;
   }
 
-  .page-sticker {
-    width: 38px;
-    height: 38px;
-  }
-
-  .page-sticker:nth-child(5),
-  .page-sticker:nth-child(6) {
-    display: none;
-  }
 }
 
 @media (max-width: 350px) {
